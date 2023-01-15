@@ -40,7 +40,7 @@ const SCOPES = [
     "user-read-recently-played",
     "user-top-read"
 ]
-const stateKey = 'spotify_auth_state';
+export const stateKey = 'spotify_auth_state';
 
 const generateRandomString = (length) => {
     let text = '';
@@ -64,6 +64,16 @@ export const handleLogin = () => {
         `&response_type=token` +
         `&show_dialog=false` +
         `&state=${STATE}`
+}
+
+export const getHashParams = () => {
+    let hashParams = {};
+    let e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+    while (e = r.exec(q)) {
+        hashParams[e[1]] = decodeURIComponent(e[2]);
+    }
+    return hashParams;
 }
 
 //endregion

@@ -1,7 +1,7 @@
 import {Col, Row} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 import React from 'react'
-import BootstrapIcon from '../utils/bootstrapIcon.jsx'
+import BootstrapIcon from '../../utils/bootstrapIcon.jsx'
 import styled from 'styled-components'
 
 const NavContainer = styled(Row)`

@@ -17,7 +17,7 @@ const TracksList = ({searchInput, isEditing}) => {
     }
 
     return (
-        <Container className={"pt-5"}>
+        <Container fluid className={"pt-5"}>
             <Table className={darkTheme ? "table-dark" : "table-light"}>
                 <thead>
                 <tr>

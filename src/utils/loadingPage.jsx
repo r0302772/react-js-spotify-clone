@@ -30,7 +30,7 @@ const LoadingPage = styled.span`
   }
 
   :after {
-    color: #FF3D00;
+    color: green;
     transform: rotateY(70deg);
     animation-delay: .4s;
   }

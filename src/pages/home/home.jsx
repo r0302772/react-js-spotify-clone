@@ -1,18 +1,7 @@
 import Dashboard from "./dashboard.jsx";
 import Login from "../login/login.jsx";
 import {useEffect, useState} from "react";
-
-const getHashParams = () => {
-    let hashParams = {};
-    let e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    while (e = r.exec(q)) {
-        hashParams[e[1]] = decodeURIComponent(e[2]);
-    }
-    return hashParams;
-}
-
-const stateKey = 'spotify_auth_state';
+import {getHashParams, stateKey} from "../../API/utils/spotifyAPI.js";
 
 const params = getHashParams();
 
@@ -21,7 +10,7 @@ const access_token = params.access_token,
     storedState = localStorage.getItem(stateKey);
 
 const Home = () => {
-    const [accessToken, setAccessToken] = useState("")
+    const [accessToken, setAccessToken] = useState(null)
 
     useEffect(() => {
         if (access_token && (state == null || state !== storedState)) {
@@ -34,14 +23,14 @@ const Home = () => {
                 window.location.hash = ""
                 localStorage.setItem("access_token", access_token)
                 setAccessToken(access_token)
+                console.log(access_token)
             }
         }
     }, [])
 
-
     return (
         <>
-            {!access_token ? <Login/> : <Dashboard token={accessToken}/>}
+            {!accessToken ? <Login/> : <Dashboard token={accessToken}/>}
         </>
     )
 

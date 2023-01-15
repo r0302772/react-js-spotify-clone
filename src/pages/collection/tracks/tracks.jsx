@@ -8,7 +8,7 @@ const Tracks = () => {
     const [searchInput, setSearchInput, isEditing] = useIsEditing({defaultValue: ''})
 
     return (
-        <>
+        <Container fluid>
             <Container className={"pt-5"}>
                 <InputGroup>
                     <Form.Control
@@ -21,7 +21,7 @@ const Tracks = () => {
             <Suspense fallback={<LoadingPage/>}>
                 <TracksList searchInput={searchInput} isEditing={!isEditing}/>
             </Suspense>
-        </>
+        </Container>
     )
 }
 

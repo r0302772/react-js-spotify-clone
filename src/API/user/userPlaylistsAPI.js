@@ -19,7 +19,7 @@ const fetchMyPlaylistsCollection = async () => {
 
 export const useGetMyPlaylistsCollection = () => {
     const result = useQuery(
-        ['my_recently_played_tracks'],
+        ['my_playlists_collection'],
         async () => (await fetchMyPlaylistsCollection())?.data,
         {
             staleTime: Infinity,

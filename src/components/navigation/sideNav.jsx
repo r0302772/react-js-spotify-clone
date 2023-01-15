@@ -1,8 +1,8 @@
 import {Col, Row, Form} from 'react-bootstrap'
 import NavItem from "./navItem.jsx";
-import BootstrapIcon from "../utils/bootstrapIcon.jsx";
+import BootstrapIcon from "../../utils/bootstrapIcon.jsx";
 import {useContext} from "react";
-import ThemeContext from "../context/themeContext.js";
+import ThemeContext from "../../context/themeContext.js";
 
 const SideNav = ({isExpanded, toggleIsExpanded}) => {
     const {darkTheme, toggleDarkTheme} = useContext(ThemeContext)
